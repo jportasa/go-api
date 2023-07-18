@@ -27,6 +27,7 @@ Point out that this:
 - will create the k8s namespace "prima" 
 - the mysql server, you can see that the terraform module mysql initializes as well the database with contents.
 - for simlicity I have disabled authentication to access the RDS, this can be done through k8s Secrets, using aws-external-secret controller for AWS,...
+- For simplicity I have just added one env var to the API, "DBHOST"
 
 ```
 cd terraform/mysql
