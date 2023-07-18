@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: api
+  labels:
+    app: api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: api
+  template:
+    metadata:
+      labels:
+        app: api
+    spec:
+      containers:
+      - image: api:0.0.4
+        name: app
+        env:
+          # Use secret with credentials in real usage
+        - name: DBHOST
+          value: mysql
+        ports:
+        - containerPort: 3001
+          name: api
+
